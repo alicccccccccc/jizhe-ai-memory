@@ -16,12 +16,6 @@ const contactLinks = [
   { label: "GitHub", value: "github.com/alicccccccccc", href: "https://github.com/alicccccccccc" },
 ];
 
-const stats = [
-  { value: "2 款", label: "小程序建设", note: "企业测评 / 活动选座" },
-  { value: "600", label: "选座设计容量", note: "分区选座与运营后台" },
-  { value: "8+", label: "用户访谈", note: "归纳 30+ 条信贷流程痛点" },
-];
-
 const experiences = [
   {
     time: "2026.08 – 至今",
@@ -88,26 +82,26 @@ const projects = [
   {
     id: "mission-02",
     name: "Prompt 菜市场",
-    role: "108 个职业 AI 角色与任务工作台",
+    role: "职业 AI 角色与任务工作台",
     date: "2026.10",
     image: "./prompt-market-demo.jpg",
     imageAlt: "Prompt 菜市场实际界面：互动网格、卡通角色与职业分类筛选",
     demo: "https://prompt-market-3zx.pages.dev/",
     caseStudy: "./prompt-market.html",
     demoNote: "已上线。可搜索、收藏、填写任务与导出 Codex 技能包；模型运行使用用户自己的 AI 工具。",
-    summary: "将公开授权的职业角色库精选为 108 个角色，重新组织为 9 个工作分类。以卡通角色卡降低浏览门槛，用任务、背景和交付要求将长提示词变成可以直接带走的任务包。",
-    details: ["React", "Vite", "Cloudflare Pages", "Codex 技能包", "MIT 授权内容"],
-    flow: ["搜索角色", "填写任务", "预览提示词", "复制或导出", "交给 AI 验收"],
+    summary: "独立完成 Prompt 菜市场的产品设计、交互设计、前端开发与上线部署。围绕查找职业角色和完成实际任务，设计角色分类、卡通角色卡和任务工作台，支持搜索收藏、提示词预览与 Codex 技能包导出。",
+    details: ["React", "Vite", "Cloudflare Pages", "Codex 技能包"],
+    flow: ["查找角色", "填写任务", "预览提示词", "复制或导出", "在 AI 工具中使用"],
     brief: [
       { label: "产品目标", value: "让用户按具体任务找到、填写并复用角色方法" },
       { label: "核心设计", value: "角色卡片、任务组合器与 Codex 文件导出" },
-      { label: "独立负责", value: "内容精选、产品设计、开发与独立部署" },
+      { label: "独立负责", value: "产品设计、交互设计、前端开发与上线部署" },
     ],
     evidence: [
-      { title: "角色精选", text: "从 276 个公开授权模板中精选 108 个，整理为 9 类，每个角色补充任务示例、短介绍与交付清单。" },
-      { title: "任务组合", text: "将角色方法与用户填写的目标、背景、输出要求组合，支持预览、复制和 Markdown 下载。" },
-      { title: "Codex 复用", text: "单个角色或菜篮批量导出 SKILL.md、任务文件与来源许可，放入项目后交给自己的 Codex 使用。" },
-      { title: "边界与交付", text: "无需注册，收藏与草稿保存在浏览器；不托管模型推理，不收集密钥，独立部署不影响其他产品。" },
+      { title: "信息架构", text: "按职业与工作场景组织角色，设计分类筛选、关键词搜索与任务示例，帮助用户判断角色是否适合当前任务。" },
+      { title: "交互设计", text: "设计卡通角色卡、收藏与菜篮，让角色浏览、选择和批量带走形成连续操作流程。" },
+      { title: "任务工作台", text: "将任务输入拆为目标、背景和输出要求，提供示例填充、提示词预览、复制及 Markdown 与 Codex 技能包导出。" },
+      { title: "开发与交付", text: "使用 React 与 Vite 完成前端开发，接入浏览器本地存储，适配桌面与手机，并部署至 Cloudflare Pages。" },
     ],
   },
 ];
@@ -281,7 +275,7 @@ function App() {
         const label = section.querySelector(".section-heading span");
         const heading = section.querySelector(".section-heading h2");
         const intro = section.querySelector(".section-heading p");
-        const cards = section.querySelectorAll(".bio-panel, .stats-panel, .timeline-panel, .mission-card, .mission-detail, .strength-card");
+        const cards = section.querySelectorAll(".bio-panel, .timeline-panel, .mission-card, .mission-detail, .strength-card");
 
         gsap.set([label, heading, intro], { autoAlpha: 0 });
         gsap.set(label, { x: -180, scaleX: 0.62, transformOrigin: "0% 50%", filter: "blur(8px)" });
@@ -439,16 +433,6 @@ function App() {
                   </a>
                 ))}
               </div>
-            </div>
-
-            <div className="stats-panel">
-              {stats.map((item) => (
-                <div className="stat-cell" key={item.label}>
-                  <strong>{item.value}</strong>
-                  <span>{item.label}</span>
-                  <small>{item.note}</small>
-                </div>
-              ))}
             </div>
 
             <div className="timeline-panel">

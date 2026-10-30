@@ -362,24 +362,21 @@ main { position: relative; z-index: 1; background: #030303; overflow: hidden; }
 .section-heading p { max-width: 760px; margin: 18px 0 0; }
 .profile-grid {
   display: grid;
-  grid-template-columns: minmax(320px, 0.9fr) minmax(420px, 1.1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: 24px;
 }
-.bio-panel, .stats-panel, .timeline-panel, .mission-detail, .strength-card {
+.bio-panel, .timeline-panel, .mission-detail, .strength-card {
   border: 1px solid var(--line);
   background: rgba(8,8,8,0.68);
   backdrop-filter: blur(8px);
 }
-.bio-panel { padding: 28px; min-height: 350px; }
+.bio-panel { padding: 28px; }
+.bio-panel p { max-width: 75ch; }
 .bio-panel h3, .mission-copy h3, .strength-card h3 { margin: 0; font-size: clamp(1.5rem, 2vw, 2.2rem); line-height: 1.16; }
-.contact-grid { display: grid; gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); }
+.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 28px; background: var(--line); border: 1px solid var(--line); }
 .contact-grid a { padding: 16px; background: #070707; font-family: "Microsoft YaHei UI", sans-serif; }
 .contact-grid span { display: block; color: var(--muted); font-size: 0.82rem; margin-bottom: 6px; }
 .contact-grid strong { overflow-wrap: anywhere; }
-.stats-panel { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1px; background: var(--line); }
-.stat-cell { min-height: 174px; padding: 24px; background: #070707; }
-.stat-cell strong { display: block; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: 0.92; }
-.stat-cell span { display: block; margin-top: 14px; color: var(--soft); font-family: "Microsoft YaHei UI", sans-serif; }
 .timeline-panel { grid-column: 1 / -1; padding: 0 28px; }
 .timeline-panel article { display: grid; grid-template-columns: 190px 1fr; gap: 36px; padding: 26px 0; border-bottom: 1px solid var(--line); }
 .timeline-panel article:last-child { border-bottom: 0; }
@@ -452,7 +449,7 @@ main { position: relative; z-index: 1; background: #030303; overflow: hidden; }
   .contact-button { justify-self: start; }
   .nav { gap: 12px; }
   .nav-links { gap: 18px; flex-wrap: wrap; }
-  .stats-panel, .timeline-panel article { grid-template-columns: 1fr; }
+  .contact-grid, .timeline-panel article { grid-template-columns: 1fr; }
   .mission-detail { min-height: auto; }
   .mission-image { height: 300px; }
   .profile-section, .projects-section, .strengths-section { padding: 72px 0; }
@@ -588,7 +585,6 @@ main { position: relative; z-index: 1; background: #030303; overflow: hidden; }
   margin-bottom: 18px;
 }
 .bio-panel,
-.stats-panel,
 .timeline-panel,
 .mission-detail,
 .strength-card {
@@ -598,24 +594,6 @@ main { position: relative; z-index: 1; background: #030303; overflow: hidden; }
 .timeline-panel:hover,
 .mission-detail:hover {
   border-color: rgba(255, 42, 42, 0.38);
-}
-.stat-cell {
-  position: relative;
-  overflow: hidden;
-}
-.stat-cell::after {
-  content: "";
-  position: absolute;
-  inset: auto 18px 18px 18px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--red), transparent);
-  opacity: 0.58;
-}
-.stat-cell small {
-  display: block;
-  margin-top: 10px;
-  color: rgba(242,242,242,0.46);
-  font-family: "Microsoft YaHei UI", sans-serif;
 }
 .timeline-header {
   display: flex;
@@ -808,7 +786,6 @@ body::after {
   mask-image: radial-gradient(circle at 50% 34%, #000, transparent 76%);
 }
 .bio-panel,
-.stats-panel,
 .timeline-panel,
 .mission-detail,
 .strength-card,
@@ -955,7 +932,6 @@ body::after {
     radial-gradient(ellipse at 50% 50%, transparent 36%, rgba(255,42,42,0.08) 62%, transparent 74%);
 }
 .bio-panel,
-.stats-panel,
 .timeline-panel,
 .mission-detail,
 .strength-card {
@@ -1008,7 +984,6 @@ body::after {
   transform-style: preserve-3d;
 }
 .bio-panel,
-.stats-panel,
 .timeline-panel,
 .mission-card,
 .mission-detail,
@@ -1047,7 +1022,6 @@ body::after {
 
 @media (prefers-reduced-motion: reduce) {
   .bio-panel,
-  .stats-panel,
   .timeline-panel,
   .mission-card,
   .mission-detail,
@@ -1125,9 +1099,6 @@ section[id], footer[id] { scroll-margin-top: 110px; }
   font-weight: 600;
 }
 .timeline-panel article:first-of-type time { color: var(--red); }
-.stats-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.stat-cell { display: flex; flex-direction: column; justify-content: center; }
-.stat-cell strong { font-size: clamp(2rem, 4vw, 4.1rem); }
 .mission-list { align-self: start; }
 .product-screenshot { height: auto; aspect-ratio: 1440 / 1000; }
 .mission-image.product-screenshot img {
@@ -1177,15 +1148,11 @@ section[id], footer[id] { scroll-margin-top: 110px; }
   outline-offset: 5px;
 }
 .card-meta { flex-wrap: wrap; }
-.brand small, .stat-cell small { font-size: 0.8125rem; }
+.brand small { font-size: 0.8125rem; }
 @media (max-width: 720px) {
   section[id], footer[id] { scroll-margin-top: 140px; }
   .experience-points { font-size: 0.9375rem; }
   .timeline-panel article { gap: 14px; }
-  .stats-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .stat-cell { padding: 20px 10px; min-height: 0; }
-  .stat-cell strong { font-size: clamp(1.65rem, 7vw, 2.2rem); }
-  .stat-cell span, .stat-cell small { font-size: 0.8125rem; line-height: 1.6; }
   .project-access { align-items: flex-start; flex-direction: column; gap: 14px; }
   .mission-copy { padding: 22px; }
   .project-cover-copy > span { margin-bottom: 16px; }
