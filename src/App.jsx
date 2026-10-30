@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import LiquidChrome from "./LiquidChrome";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -57,29 +57,6 @@ const experiences = [
 
 const projects = [
   {
-    id: "mission-01",
-    name: "记着 JiZhe",
-    role: "AI 个人记忆检索系统",
-    date: "2026.06",
-    image: "./jizhe-demo.jpg",
-    demo: "https://jizhe-memory-demo.pages.dev/",
-    demoNote: "当前公开演示支持文字保存与检索；AI 问答和图片理解尚未接入服务。",
-    summary: "面向学生、知识工作者和创作者，设计一个可保存文字、截图和资料图片的个人记忆系统。AI 负责理解内容并生成标题、摘要、标签、结构化字段和可搜索内容，回答必须来自用户自己的记忆来源。",
-    details: ["React", "GPT 多模态识别", "Cloudflare Pages Functions", "PWA"],
-    flow: ["保存文字/图片", "AI 理解", "本地存储", "加权检索", "问答引用"],
-    brief: [
-      { label: "产品目标", value: "让保存过的资料可检索、可引用" },
-      { label: "AI 设计", value: "截图理解、结构化信息与来源约束问答" },
-      { label: "独立负责", value: "需求分析、产品设计、开发与部署" },
-    ],
-    evidence: [
-      { title: "产品定位", text: "本地优先，不做云同步和协作，把保存成本、可信检索和来源引用作为 MVP 核心。" },
-      { title: "关键链路", text: "文字或图片进入系统后，生成结构化记忆，再通过标题、标签、分类、摘要、字段和全文进行带权重召回。" },
-      { title: "可信问答", text: "疑问句触发问答，召回前 6 条记忆，答案只基于召回内容生成，并展示可点击来源卡片。" },
-      { title: "异常与安全", text: "AI 失败不阻断保存，支持重试或手动关键词兜底；通过后端代理保护 API Key，不在前端暴露服务密钥。" },
-    ],
-  },
-  {
     id: "mission-02",
     name: "Prompt 菜市场",
     role: "职业 AI 角色与任务工作台",
@@ -102,6 +79,29 @@ const projects = [
       { title: "交互设计", text: "设计卡通角色卡、收藏与菜篮，让角色浏览、选择和批量带走形成连续操作流程。" },
       { title: "任务工作台", text: "将任务输入拆为目标、背景和输出要求，提供示例填充、提示词预览、复制及 Markdown 与 Codex 技能包导出。" },
       { title: "开发与交付", text: "使用 React 与 Vite 完成前端开发，接入浏览器本地存储，适配桌面与手机，并部署至 Cloudflare Pages。" },
+    ],
+  },
+  {
+    id: "mission-01",
+    name: "记着 JiZhe",
+    role: "AI 个人记忆检索系统",
+    date: "2026.06",
+    image: "./jizhe-demo.jpg",
+    demo: "https://jizhe-memory-demo.pages.dev/",
+    demoNote: "当前公开演示支持文字保存与检索；AI 问答和图片理解尚未接入服务。",
+    summary: "面向学生、知识工作者和创作者，设计一个可保存文字、截图和资料图片的个人记忆系统。AI 负责理解内容并生成标题、摘要、标签、结构化字段和可搜索内容，回答必须来自用户自己的记忆来源。",
+    details: ["React", "GPT 多模态识别", "Cloudflare Pages Functions", "PWA"],
+    flow: ["保存文字/图片", "AI 理解", "本地存储", "加权检索", "问答引用"],
+    brief: [
+      { label: "产品目标", value: "让保存过的资料可检索、可引用" },
+      { label: "AI 设计", value: "截图理解、结构化信息与来源约束问答" },
+      { label: "独立负责", value: "需求分析、产品设计、开发与部署" },
+    ],
+    evidence: [
+      { title: "产品定位", text: "本地优先，不做云同步和协作，把保存成本、可信检索和来源引用作为 MVP 核心。" },
+      { title: "关键链路", text: "文字或图片进入系统后，生成结构化记忆，再通过标题、标签、分类、摘要、字段和全文进行带权重召回。" },
+      { title: "可信问答", text: "疑问句触发问答，召回前 6 条记忆，答案只基于召回内容生成，并展示可点击来源卡片。" },
+      { title: "异常与安全", text: "AI 失败不阻断保存，支持重试或手动关键词兜底；通过后端代理保护 API Key，不在前端暴露服务密钥。" },
     ],
   },
 ];
