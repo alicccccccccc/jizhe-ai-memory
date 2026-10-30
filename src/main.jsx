@@ -6,6 +6,6 @@ import "./styles.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {window.location.pathname.endsWith('/prompt-market.html') ? <PromptMarketCase /> : <App />}
+    {/\/prompt-market(?:\.html)?\/?$/.test(window.location.pathname) ? <PromptMarketCase /> : <App />}
   </React.StrictMode>,
 );
