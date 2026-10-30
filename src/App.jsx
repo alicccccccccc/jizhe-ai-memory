@@ -11,35 +11,53 @@ const navItems = [
 ];
 
 const contactLinks = [
-  { label: "Phone", value: "18128632583", href: "tel:18128632583" },
+  { label: "Phone", value: "13352836083", href: "tel:13352836083" },
   { label: "Email", value: "alicccccc@qq.com", href: "mailto:alicccccc@qq.com" },
-  { label: "GitHub", value: "github.com/aliccccccccc", href: "https://github.com/aliccccccccc" },
+  { label: "GitHub", value: "github.com/alicccccccccc", href: "https://github.com/alicccccccccc" },
 ];
 
 const stats = [
-  { value: "40", label: "Product", note: "AI 产品 0 到 1" },
-  { value: "40", label: "Business", note: "业务 SOP 拆解" },
-  { value: "20", label: "Data", note: "归因与调优" },
+  { value: "2 款", label: "小程序建设", note: "企业测评 / 活动选座" },
+  { value: "600", label: "选座设计容量", note: "分区选座与运营后台" },
+  { value: "8+", label: "用户访谈", note: "归纳 30+ 条信贷流程痛点" },
 ];
 
 const experiences = [
   {
-    time: "2026.02 - 2026.07",
-    title: "AI 产品助理（B 端信贷）",
+    time: "2026.08 – 至今",
+    title: "AI 产品经理",
+    place: "邱震海文化信息咨询有限公司",
+    points: [
+      { label: "AI 工作流", text: "将逐字稿转视觉排版封装为可复用的 Codex Skill，定义文本解析、HTML/PDF 自动渲染与脚本校验流程，引入质量检查和异常拦截。" },
+      { label: "小程序与云部署", text: "使用 Codex + MCP 推进「企业增长潜力测评」「跨年活动选座」两款小程序的需求、交互与接口联调；通过 CloudBase 云函数打通提交、报告查看、企微通知，完成域名与 HTTPS 验证。" },
+      { label: "选座与运营后台", text: "从 0 到 1 设计支持 600 人规模的分区选座，覆盖拖拽、双指缩放、空座 / 已选 / 已预约状态，以及后台选座码生成、预约管理和真机测试。" },
+      { label: "业务产品化", text: "参与出海课程竞品研究、课程结构与详情页信息架构，重构跨年演讲工作簿；梳理财富教育课程合作协议、隐私条款与商业参数确认表。" },
+    ],
+  },
+  {
+    time: "2026.02 – 2026.07",
+    title: "AI 产品助理（B 端信贷方向）",
     place: "深圳市小融信息技术有限公司",
-    text: "拆解银行信贷全链路 SOP，结合 SQL 归因与用户访谈定位高流失节点，推动 5 项优化进入迭代排期。",
+    points: [
+      { label: "流程与需求", text: "参与银行信贷流程梳理与 PRD 整理，输出流程说明和需求文档。" },
+      { label: "研究与验证", text: "通过 8+ 场用户访谈归纳 30+ 条痛点，推动 5 项优化进入排期；基于 SQL 分析申请流失，方案采纳后申请完成率提升约 15%。" },
+    ],
   },
   {
-    time: "2025.11 - 2026.02",
-    title: "软件测试",
+    time: "2025.11 – 2026.02",
+    title: "测试",
     place: "深圳尚学汇智教育科技有限公司",
-    text: "负责题库、考试、阅卷、成绩分析模块测试，编写 300+ 条用例，并输出 10+ 项产品改进建议。",
+    points: [
+      { label: "质量与体验", text: "验证题库、考试、阅卷和成绩分析模块，编写 300+ 条测试用例，提出 10+ 项体验优化建议。" },
+    ],
   },
   {
-    time: "2022.09 - 2026.06",
+    time: "2022.09 – 2026.06",
     title: "计算机科学与技术 本科",
     place: "广州新华学院",
-    text: "GPA 专业前 20%，持续学习 AI 产品、RAG、Agent 工作流、Prompt Engineering 与产品数据分析。",
+    points: [
+      { label: "教育背景", text: "GPA 专业前 20%。计算机本科背景，聚焦 AI 应用产品、需求拆解与产品落地。" },
+    ],
   },
 ];
 
@@ -47,32 +65,59 @@ const projects = [
   {
     id: "mission-01",
     name: "记着 JiZhe",
-    role: "本地优先个人记忆搜索引擎 / V1.1",
-    version: "PRD V1.1 · 2026.07.25",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=85",
+    role: "AI 个人记忆检索系统",
+    date: "2026.06",
+    image: "./jizhe-demo.jpg",
+    demo: "https://jizhe-memory-demo.pages.dev/",
+    demoNote: "当前公开演示支持文字保存与检索；AI 问答和图片理解尚未接入服务。",
     summary: "面向学生、知识工作者和创作者，设计一个可保存文字、截图和资料图片的个人记忆系统。AI 负责理解内容并生成标题、摘要、标签、结构化字段和可搜索内容，回答必须来自用户自己的记忆来源。",
-    details: ["本地 AI 代理", "多模态图片识别", "加权本地搜索", "问答引用来源", "JSON 备份"],
+    details: ["React", "GPT 多模态识别", "Cloudflare Pages Functions", "PWA"],
     flow: ["保存文字/图片", "AI 理解", "本地存储", "加权检索", "问答引用"],
     brief: [
-      { label: "Goal", value: "保存 -> 理解 -> 检索 -> 回答 -> 引用" },
-      { label: "AI Part", value: "文本提取 + 多模态识别 + 来源约束回答" },
-      { label: "PM Part", value: "PRD、原型、验收标准、错误兜底" },
+      { label: "产品目标", value: "让保存过的资料可检索、可引用" },
+      { label: "AI 设计", value: "截图理解、结构化信息与来源约束问答" },
+      { label: "独立负责", value: "需求分析、产品设计、开发与部署" },
     ],
     evidence: [
       { title: "产品定位", text: "本地优先，不做云同步和协作，把保存成本、可信检索和来源引用作为 MVP 核心。" },
       { title: "关键链路", text: "文字或图片进入系统后，生成结构化记忆，再通过标题、标签、分类、摘要、字段和全文进行带权重召回。" },
       { title: "可信问答", text: "疑问句触发问答，召回前 6 条记忆，答案只基于召回内容生成，并展示可点击来源卡片。" },
-      { title: "异常设计", text: "AI 失败不阻断保存；图片识别失败展示真实错误，支持重试或手动关键词兜底。" },
+      { title: "异常与安全", text: "AI 失败不阻断保存，支持重试或手动关键词兜底；通过后端代理保护 API Key，不在前端暴露服务密钥。" },
+    ],
+  },
+  {
+    id: "mission-02",
+    name: "Prompt 菜市场",
+    role: "108 个职业 AI 角色与任务工作台",
+    date: "2026.10",
+    image: "./prompt-market-demo.jpg",
+    imageAlt: "Prompt 菜市场实际界面：互动网格、卡通角色与职业分类筛选",
+    demo: "https://prompt-market-3zx.pages.dev/",
+    caseStudy: "./prompt-market.html",
+    demoNote: "已上线。可搜索、收藏、填写任务与导出 Codex 技能包；模型运行使用用户自己的 AI 工具。",
+    summary: "将公开授权的职业角色库精选为 108 个角色，重新组织为 9 个工作分类。以卡通角色卡降低浏览门槛，用任务、背景和交付要求将长提示词变成可以直接带走的任务包。",
+    details: ["React", "Vite", "Cloudflare Pages", "Codex 技能包", "MIT 授权内容"],
+    flow: ["搜索角色", "填写任务", "预览提示词", "复制或导出", "交给 AI 验收"],
+    brief: [
+      { label: "产品目标", value: "让用户按具体任务找到、填写并复用角色方法" },
+      { label: "核心设计", value: "角色卡片、任务组合器与 Codex 文件导出" },
+      { label: "独立负责", value: "内容精选、产品设计、开发与独立部署" },
+    ],
+    evidence: [
+      { title: "角色精选", text: "从 276 个公开授权模板中精选 108 个，整理为 9 类，每个角色补充任务示例、短介绍与交付清单。" },
+      { title: "任务组合", text: "将角色方法与用户填写的目标、背景、输出要求组合，支持预览、复制和 Markdown 下载。" },
+      { title: "Codex 复用", text: "单个角色或菜篮批量导出 SKILL.md、任务文件与来源许可，放入项目后交给自己的 Codex 使用。" },
+      { title: "边界与交付", text: "无需注册，收藏与草稿保存在浏览器；不托管模型推理，不收集密钥，独立部署不影响其他产品。" },
     ],
   },
 ];
 const strengths = [
-  { title: "AI 产品 0 到 1", level: "Applied", use: "早期产品闭环", text: "从需求发现、原型、PRD 到迭代推进，能把模糊想法变成可交付计划。" },
-  { title: "RAG / Agent 产品化", level: "Applied", use: "JiZhe 记忆检索", text: "关注检索质量、上下文管理、幻觉治理与结构化输出约束。" },
-  { title: "业务 SOP 拆解", level: "Strong", use: "B 端信贷流程", text: "把复杂审批流、状态流转和用户路径拆成清晰的产品规则。" },
-  { title: "用户研究", level: "Strong", use: "12+ 场访谈", text: "通过访谈、角色模拟和行为观察，把用户痛点变成产品判断。" },
-  { title: "数据归因", level: "Applied", use: "SQL / A/B Test", text: "用 SQL、A/B 测试和行为数据验证体验问题，推动决策更具体。" },
-  { title: "跨团队推进", level: "Reliable", use: "评审与站会", text: "参与评审、站会和协作沟通，让设计、前端、后端围绕同一目标前进。" },
+  { title: "AI 工作流设计", use: "Codex Skill / 自动校验", text: "把逐字稿解析、HTML/PDF 渲染和脚本校验封装为可复用流程，关注结果质量与异常拦截。" },
+  { title: "可信 AI 应用", use: "Prompt / Memory / RAG", text: "设计结构化输出、多模态识别与来源引用，处理识别失败、降级兜底和密钥安全。" },
+  { title: "MVP 开发与云部署", use: "Codex + MCP / CloudBase", text: "推进页面实现与接口联调，使用 React、Next.js、Supabase、CloudBase 和 Cloudflare Pages 完成功能落地。" },
+  { title: "业务流程与产品规则", use: "信贷流程 / 选座状态", text: "拆解业务 SOP、交互状态和后台管理需求，以流程说明、PRD 与原型支持交付。" },
+  { title: "用户研究与数据分析", use: "8+ 场访谈 / SQL", text: "通过访谈归纳痛点，以 SQL 分析申请流失，将问题转化为可进入排期的优化建议。" },
+  { title: "产品设计与协同", use: "Figma / Axure / ChatGPT / DeepSeek", text: "结合竞品研究、信息架构与产品原型推进需求沟通，参与课程产品化及运营后台设计。" },
 ];
 
 function Starfield() {
@@ -305,6 +350,18 @@ function App() {
 
     return () => context.revert();
   }, []);
+
+  useEffect(() => {
+    const section = navItems.find((item) => item.href === window.location.hash);
+    if (!section) return undefined;
+
+    // React mounts the sections after the browser's initial fragment navigation.
+    const frame = requestAnimationFrame(() => {
+      document.getElementById(section.id)?.scrollIntoView({ behavior: "instant", block: "start" });
+    });
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     <div className="site-shell">
       <Starfield />
@@ -315,6 +372,7 @@ function App() {
         </video>
         <div className="hero-scrim" />
 
+        <div className="nav-slot">
         <nav className={navFloating ? "nav frame nav-floating" : "nav frame"} aria-label="Primary navigation">
           <a className="brand" href="#top">
             <span>LGH</span>
@@ -329,6 +387,7 @@ function App() {
           </div>
           <a className="contact-button" href="mailto:alicccccc@qq.com">建立联系</a>
         </nav>
+        </div>
 
         <div className="hero-inner frame">
           <div className="hero-copy-block">
@@ -341,7 +400,7 @@ function App() {
               <li>Prompt Design</li>
               <li>Data Attribution</li>
             </ul>
-            <p className="hero-text">把复杂业务、AI 能力和用户体验拆成可以交付的产品路径。</p>
+            <p className="hero-text">聚焦 AI 应用，从需求拆解、工作流设计到 MVP 开发与云部署，让产品走到可用的那一步。</p>
             <div className="signal-strip" aria-label="Portfolio status">
               <span>STATUS: SEEKING AI PRODUCT ROLE</span>
               <span>MODE: INTERVIEW READY</span>
@@ -364,14 +423,14 @@ function App() {
           <div className="section-heading">
             <span>ROLE DOSSIER</span>
             <h2>角色档案卡</h2>
-            <p>把简历信息收束成身份、属性和时间线三个区域，让招聘方快速判断我能承担什么产品工作。</p>
+            <p>计算机本科背景，参与 AI 工作流、小程序与 B 端业务建设，关注产品从需求到上线的完整过程。</p>
           </div>
 
           <div className="profile-grid">
             <div className="bio-panel">
               <span className="panel-label">PLAYER PROFILE</span>
               <h3>Identity / AI 产品助理</h3>
-              <p>计算机科学与技术本科，GPA 专业前 20%。定位是 AI 产品助理，擅长把技术能力、业务规则和用户问题拆成可推进的产品方案。</p>
+              <p>求职方向：AI 产品助理。具备需求拆解、AI 工作流设计、MVP 开发与云部署实践，也有 B 端信贷流程、用户访谈与 SQL 分析经验。关注 AI 结果可信度、失败降级和数据安全。</p>
               <div className="contact-grid">
                 {contactLinks.map((item) => (
                   <a href={item.href} key={item.label}>
@@ -403,7 +462,11 @@ function App() {
                   <div>
                     <h3>{item.title}</h3>
                     <strong>{item.place}</strong>
-                    <p>{item.text}</p>
+                    <ul className="experience-points">
+                      {item.points.map((point) => (
+                        <li key={point.label}><b>{point.label}</b>{point.text}</li>
+                      ))}
+                    </ul>
                   </div>
                 </article>
               ))}
@@ -415,7 +478,7 @@ function App() {
           <div className="section-heading wide">
             <span>MISSION SELECT</span>
             <h2>任务作品集</h2>
-            <p>这部分根据最新 PRD 迭代，展示我如何把一个 AI 产品从问题定义、功能边界、信息架构、异常兜底到验收标准完整拆出来。</p>
+            <p>两个已上线的独立产品，分别探索个人资料检索，以及职业角色提示词的选择与复用。</p>
           </div>
 
           <div className="mission-board">
@@ -426,30 +489,41 @@ function App() {
                   key={project.id}
                   onClick={() => setActiveProject(project)}
                   type="button"
+                  aria-pressed={project.id === activeProject.id}
+                  aria-controls="project-detail"
                 >
-                  <span>{project.id}</span>
+                  <span>{project.date} · 独立项目</span>
                   <strong>{project.name}</strong>
                   <small>{project.role}</small>
                 </button>
               ))}
             </div>
 
-            <article className="mission-detail">
-              <div className="mission-image">
-                <img src={activeProject.image} alt={`${activeProject.name} 项目展示图`} />
-                <div className="mission-image-hud">
-                  <span>Selected Mission</span>
-                  <strong>{activeProject.id}</strong>
-                </div>
+            <article className="mission-detail" id="project-detail" aria-label={activeProject.name}>
+              <div className={activeProject.image ? "mission-image product-screenshot" : "mission-image project-cover"}>
+                {activeProject.image ? (
+                  <img src={activeProject.image} alt={activeProject.imageAlt || "记着公开演示站实际界面：记忆分类、个人资料检索与记忆助手"} loading="lazy" width="1440" height="1000" />
+                ) : (
+                  <div className="project-cover-copy">
+                    <span>Prompt Market</span>
+                    <strong>让好用的 Prompt<br />成为可复用的资产。</strong>
+                    <p>版本管理、运行测试、语义搜索与成本看板</p>
+                  </div>
+                )}
               </div>
               <div className="mission-copy">
                 <span>{activeProject.role}</span>
                 <h3>{activeProject.name}</h3>
                 <p>{activeProject.summary}</p>
+                <div className="project-access">
+                  {activeProject.demo && <a className="primary-link" href={activeProject.demo} target="_blank" rel="noreferrer">体验{activeProject.name}</a>}
+                  {activeProject.caseStudy && <a className="secondary-link" href={activeProject.caseStudy}>查看产品案例</a>}
+                  <p>{activeProject.demoNote}</p>
+                </div>
                 <div className="mission-brief">
-                  <div><span>Goal</span><strong>个人记忆检索闭环</strong></div>
-                  <div><span>AI Part</span><strong>RAG + Copilot</strong></div>
-                  <div><span>PM Part</span><strong>需求拆解与路径设计</strong></div>
+                  {activeProject.brief.map((item) => (
+                    <div key={item.label}><span>{item.label}</span><strong>{item.value}</strong></div>
+                  ))}
                 </div>
                 <div className="mission-flow">
                   {activeProject.flow.map((step) => <span key={step}>{step}</span>)}
@@ -482,7 +556,7 @@ function App() {
               <article className="strength-card" key={item.title} style={{ "--delay": `${index * 70}ms` }}>
                 <small>card {String(index + 1).padStart(2, "0")}</small>
                 <h3>{item.title}</h3>
-                <div className="card-meta"><span>Level: {item.level}</span><span>Use: {item.use}</span></div>
+                <div className="card-meta"><span>{item.use}</span></div>
                 <p>{item.text}</p>
               </article>
             ))}
@@ -493,7 +567,7 @@ function App() {
       <footer className="closing-section" id="contact">
         <div className="ending-panel frame">
           <span>RESULT SCREEN</span>
-          <h2>有幸展示个人作品，感谢各位悉心观看，恳请多多指教。</h2>
+          <h2>期待一起把想法做成产品。</h2>
           <p>THANKS FOR WATCHING / 李国豪 / AI 产品助理</p>
           <div className="ending-status">
             <span>Next action</span>
@@ -501,7 +575,7 @@ function App() {
           </div>
           <div className="closing-actions">
             <a className="primary-link" href="mailto:alicccccc@qq.com">发送邮件</a>
-            <a className="secondary-link" href="https://github.com/aliccccccccc">查看 GitHub</a>
+            <a className="secondary-link" href={contactLinks[2].href}>查看 GitHub</a>
           </div>
         </div>
       </footer>

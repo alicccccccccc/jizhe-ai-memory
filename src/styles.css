@@ -1099,3 +1099,95 @@ body::after {
     grid-template-columns: 1fr;
   }
 }
+
+/* Resume content: readable experience details and honest project previews. */
+.nav-slot { min-height: 78px; }
+@media (max-width: 1120px) {
+  .nav-slot { min-height: 112px; }
+}
+section[id], footer[id] { scroll-margin-top: 110px; }
+.experience-points {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  max-width: 80ch;
+  font-family: "Microsoft YaHei UI", "PingFang SC", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(242, 242, 242, 0.84);
+}
+.experience-points b {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.timeline-panel article:first-of-type time { color: var(--red); }
+.stats-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.stat-cell { display: flex; flex-direction: column; justify-content: center; }
+.stat-cell strong { font-size: clamp(2rem, 4vw, 4.1rem); }
+.mission-list { align-self: start; }
+.product-screenshot { height: auto; aspect-ratio: 1440 / 1000; }
+.mission-image.product-screenshot img {
+  height: 100%;
+  object-fit: contain;
+  filter: none;
+  transform: none !important;
+}
+.product-screenshot::after, .project-cover::after { display: none; }
+.project-cover {
+  height: auto;
+  aspect-ratio: 1440 / 1000;
+  display: flex;
+  align-items: center;
+  background: #21100e;
+}
+.project-cover-copy { padding: clamp(24px, 4vw, 64px); }
+.project-cover-copy > span {
+  display: block;
+  font-size: 1rem;
+  color: #efb5a8;
+  margin-bottom: 24px;
+}
+.project-cover-copy strong {
+  font-size: clamp(1.55rem, 3vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+.project-cover-copy p {
+  font-family: "Microsoft YaHei UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #efb5a8;
+  margin: 24px 0 0;
+}
+.project-access {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.project-access .primary-link { flex-shrink: 0; }
+.project-access p { margin: 0; font-size: 0.875rem; }
+.mission-card { width: 100%; text-align: left; }
+.mission-card:focus-visible, a:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 5px;
+}
+.card-meta { flex-wrap: wrap; }
+.brand small, .stat-cell small { font-size: 0.8125rem; }
+@media (max-width: 720px) {
+  section[id], footer[id] { scroll-margin-top: 140px; }
+  .experience-points { font-size: 0.9375rem; }
+  .timeline-panel article { gap: 14px; }
+  .stats-panel { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .stat-cell { padding: 20px 10px; min-height: 0; }
+  .stat-cell strong { font-size: clamp(1.65rem, 7vw, 2.2rem); }
+  .stat-cell span, .stat-cell small { font-size: 0.8125rem; line-height: 1.6; }
+  .project-access { align-items: flex-start; flex-direction: column; gap: 14px; }
+  .mission-copy { padding: 22px; }
+  .project-cover-copy > span { margin-bottom: 16px; }
+  .project-cover-copy p { font-size: 0.875rem; margin-top: 16px; }
+}
